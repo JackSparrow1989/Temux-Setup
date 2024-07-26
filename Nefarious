@@ -1,0 +1,67 @@
+IpHack
+You can find out a lot of information about IP
+
+Install with pip:
+pip install iphack
+
+Manually:
+pip install pyproxify==0.0.1
+pip install ua-headers
+pip install requests
+pip install torpy==1.1.6
+pip install eventlet==0.33.1
+wget --no-check-certificate "https://raw.githubusercontent.com/mishakorzik/IpHack/main/install.sh"
+bash install.sh
+
+
+Termux Server: Needed for Wi-fi ADB
+
+pkg install git -y
+git clone https://github.com/ARSecurityTeam/TermuxServer 
+chmod +x install_and_setup.sh
+./install_and_setup.sh 
+
+Have no fucking clue what this does. It had not effect on my Terminal:
+
+pkg update -y && pkg install git
+git clone https://github.com/Yisus7u7/termux-ngrok
+cd termux-ngrok
+bash install.sh
+
+Run Java in Termux if you feel like wasting your time and storage space on your Android:
+
+git clone https://github.com/suhan-paradkar/java-in-termux.git --depth=1
+cd java-in-termux
+chmod +x install.sh
+bash install.sh
+
+
+Used to Edit APK packages so you could fuck somebody out of something:
+
+apt-get update -y && apt-get upgrade -y
+git clone https://github.com/h4ck3r0/Apktool-termux
+cd $HOME
+ls
+cd Apktool-termux
+chmod +x *
+bash setup.sh
+bash apktool.sh
+
+• U get java error
+• So type proot -0
+• Then run apktool
+
+
+Create Ransomware on your Android:
+
+apt update && apt upgrade
+git clone https://github.com/VaimpierOfficial/Vaim-RamSom
+cd Vaim-RamSom
+bash setup.sh
+
+
+                              
+
+
+
+                                                               
