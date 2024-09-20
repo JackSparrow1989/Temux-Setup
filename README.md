@@ -17,3 +17,5 @@ pkg install termux-tools && apt install android-tools
 curl -s https://raw.githubusercontent.com/nohajc/termux-adb/master/
 install.sh bash
 
+pkg install termux-api libusb clang
+
