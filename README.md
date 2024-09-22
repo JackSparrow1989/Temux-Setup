@@ -6,7 +6,7 @@ Start here:
 
 Before Startup
 
-pkg install root-repo && pkg install x11-repo
+pkg install root-repo && pkg install x11-repo &&
 pkg upgrade apt &&
 pkg install git && pkg install wget
 
