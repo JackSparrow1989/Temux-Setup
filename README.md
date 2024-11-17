@@ -5,17 +5,10 @@ Start here:
 
 
 Before Startup
-
+termux-setup-storage
 pkg install root-repo && pkg install x11-repo &&
 pkg upgrade apt &&
-pkg install git && pkg install wget
-
-Gets you OS ACCESS for ADB
-
-pkg install termux-api libusb clang
-
-
-pkg install termux-tools && apt install android-tools
+pkg install git && pkg install wget && pkg install curl && pkg install termux-tools && apt install android-tools
 
 
 apt-get update && apt-get upgrade -y
@@ -25,6 +18,9 @@ cd root
 chmod +x main
 ./main
 
+Gets you OS ACCESS for ADB
+
+pkg install termux-api libusb clang
 
 curl -s https://raw.githubusercontent.com/nohajc/termux-adb/master/
 install.sh bash
