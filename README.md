@@ -5,7 +5,7 @@ Start here:
 
 
 Before Startup
-termux-setup-storage
+termux-setup-storage &&
 pkg install root-repo && pkg install x11-repo &&
 pkg upgrade apt &&
 pkg install git && pkg install wget && pkg install curl && pkg install termux-tools && apt install android-tools
