@@ -1,0 +1,11 @@
+Termux Paths
+
+Path	Description
+/data/data/com.termux	Termux Private App Data Directory
+/data/data/com.termux/termux	Termux Project Directory
+/data/data/com.termux/termux/core	Termux Core Directory
+/data/data/com.termux/termux/apps	Termux Apps Directory
+/data/data/com.termux/files	Termux Rootfs Directory
+/data/data/com.termux/files/home	Termux Home Directory
+/data/data/com.termux/files/usr	Termux Prefix Directory
+/data/data/com.termux/cache	Termux App Cache Directory
