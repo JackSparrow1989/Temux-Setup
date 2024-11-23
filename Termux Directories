@@ -1,0 +1,62 @@
+Termux Project Directory
+
+Termux project directory /data/data/com.termux/termux ($TERMUX__PROJECT_DIR) added in Termux app v0119.0 is an exclusive directory for all termux files that includes core files, app and plugin app files and the rootfs. 
+
+ 
+ Termux Core Directory
+
+Termux core directory /data/data/com.termux/termux/core ($TERMUX__PROJECT_DIR) added in Termux app v0119.0 contains Termux core files for the Termux app, like user settings and configs for the app, which and are independent of any specific rootfs.
+
+ 
+ Termux Apps Directory
+
+Termux apps directory /data/data/com.termux/termux/apps ($TERMUX__APPS_DIR) added in Termux app v0119.0 contains app specific files for Termux app, its plugin apps, and third party apps, like used for app APIs and filesystem/pathname socket files of servers created by the apps.
+
+ 
+Termux Rootfs Directory
+
+Termux rootfs directory /data/data/com.termux/files ($TERMUX__ROOTFS) contains the Linux environment rootfs provided by Termux.
+
+Termux Home Directory
+
+The Termux home ($HOME) directory exists at /data/data/com.termux/files/home ($HOME/$TERMUX__HOME) by default. However, $HOME value may be changed by some programs, like su wrappers (sudo, tsu) to /data/data/com.termux/files/home/.suroot so that root owned files are kept separate from Termux user owned files.
+
+Packages should never install files to the home directory. Exception is only for package maintainer scripts (1, 2), which can be used to prepare initial configuration in $HOME for packages which can't do it on their own.
+
+ 
+Termux Prefix Directory
+
+The Termux prefix directory exists at /data/data/com.termux/files/usr ($TERMUX__PREFIX/$PREFIX) by default. It serves the same purpose as the /usr directory on linux distros and contains the bin, etc, include, lib, libexec, opt, share, tmp and var sub directories. It is exported as $TERMUX_PREFIX instead of $PREFIX in addition to $TERMUX__PREFIX in Termux packages build system.
+
+
+Important: Do not confuse the /usr directory with Termux prefix directory /data/data/com.termux/files/usr. Termux never uses the FHS compliant /usr directory found on Linux distros for packaging purposes.All hardcoded references to FHS directories in package source files are patched and replaced with Termux prefix directory during build time , like /bin or /usr/bin will get replaced with /data/data/com.termux/files/usr/bin.
+
+Path	Description
+$TERMUX__PREFIX/bin	Executables. Combines /bin, /sbin, /usr/bin, /usr/sbin.
+$TERMUX__PREFIX/etc	Configuration files.
+$TERMUX__PREFIX/include	C/C++ headers.
+$TERMUX__PREFIX/lib	Libraries, runtime executable data or development-related.
+$TERMUX__PREFIX/libexec	Executables which should not be run by user directly.
+$TERMUX__PREFIX/opt	Installation root for sideloaded packages.
+$TERMUX__PREFIX/share	Non-executable runtime data and documentation.
+$TERMUX__PREFIX/tmp	Temporary files. Erased on each application restart. Combines /tmp and /var/tmp. Can be freely modified by user.
+$TERMUX__PREFIX/var	Variable data, such as caches and databases. Can be modified by user, but with additional care.
+$TERMUX__PREFIX/var/run	Lock files, PID files, sockets and other temporary files created by daemons. Replaces /run.
+ 
+
+Termux Bin Directory
+
+The Termux provided executables currently primarily exist under /data/data/com.termux/files/usr/bin ($TERMUX__PREFIX/bin). Some packages, like busybox, may have their executables under /data/data/com.termux/files/usr/bin/applets ($TERMUX__PREFIX/bin/applets). 
+
+Termux Lib Directory
+
+The Termux provided static and shared libraries exist under /data/data/com.termux/files/usr/lib ($TERMUX__PREFIX/lib).
+
+Termux App Cache Directory
+
+Termux apps cache directory /data/data/com.termux/cache ($TERMUX__CACHE_DIR) contains cache files that are safe to be deleted by Android or Termux if required.
+
+
+
+
+
