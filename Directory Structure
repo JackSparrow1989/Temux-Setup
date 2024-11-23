@@ -1,0 +1,26 @@
+Directory Structure
+Following is a list of files and directories inside the termux-packages repo root directory, which are used by the build environment.
+
+./build-package.sh - script for building one or more packages.
+
+./build-all.sh - script for building all available packages.
+
+./clean.sh - script for cleaning build environment.
+
+./disabled-packages - directory with packages excluded from main build tree due to various reasons.
+
+./ndk-patches - directory with patches for Android NDK sysroot.
+
+./output - directory where built packages will be placed. Does not exist by default.
+
+./packages - directory where all main channel packages (scripts and patches) are located.
+
+./root-packages - directory where all root channel packages (scripts and patches) are located.
+
+./sample - sample structure for creating new package.
+
+./scripts - internal parts of build system and some utility scripts.
+
+./x11-packages - directory where all x11 channel packages (scripts and patches) are located.
+
+ 
