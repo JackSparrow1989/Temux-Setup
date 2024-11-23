@@ -1,0 +1,26 @@
+Android Paths
+Android Rootfs Directory
+The Android filesystem rootfs and home ($HOME) directory exists at /. It contains a number of directories, some of them are FHS-compliant. 
+
+Path	Description
+/	The filesystem rootfs. Usually it is a ramdisk, but on modern Android OS versions it is a mounted system partition. Can be restricted by SELinux and not be viewable by ls.
+/bin	Symlink to /system/bin. Do not add this to $PATH to prevent conflicts of Termux utilities with ones provided by Android.
+/data	The data partition of the internal sd card of the device that stores app and system data.
+/data/app	App APKs and native libraries for 3rd party apps.
+/data/data	Private app data directory for apps installed on primary user 0 for both system and 3rd party apps.
+/data/user/<user_id>	Private app data directory for apps installed on primary and secondary users for both system and 3rd party apps. The /data/user/0 is either a symlink or bind mount to /data/data.
+/dev	Device files. Access can be restricted by SELinux, though all important world-writable devices are accessible.
+/etc	Symlink to /system/etc.
+/mnt	Raw mount points of filesystems for internal and external sd cards. (1)
+/proc	Standard directory with runtime process and kernel information. Typically mounted with hidepid=2 option for privacy.
+/proc/net	Networking interface statistics. Access restricted since Android 10 for privacy reasons.
+/sbin	Directory where special-purpose executables (ADB daemon, dm-verity helper, modem nvram loader, etc). Access is restricted by SELinux and file modes. Do not add this directory to $PATH.
+/storage	External storage mount points accessible to apps with storage permissions. Like /mnt, but drive filesystems are provisioned by sdcardfs or fuse daemon. (1)
+/system	The Android OS system root.
+/system/app	App APKs and native libraries for system apps.
+/system/bin	System executables for system purposes and fully-functional ADB shell. Avoid adding this to $PATH to prevent conflicts of Termux utilities with ones provided by Android. Exceptions are allowed only for alternate executable paths, e.g. in case if package is not installed.
+/system/lib	System libraries.
+/system/priv-app	App APKs and native libraries for privileged system apps.
+/system/xbin	Optional set of system command line tools. Content may vary between ROMs. Do not add this to $PATH.
+Android Bin Directory
+The Android system provided executables primarily exist under /system/bin that are part of AOSP itself that should exist on all devices depending on Android version as detailed by Android shell_and_utilities docs. The core utilities are primarily provided by toybox (1, 2, 3) for Android >= 6 and toolbox (1) for Android < 6 and mostly have limited features compared to GNU coreutils provided by Termux and other linux distros, like debian. Moreover, older android versions do not have all the utilities or their features are missing or are severely broken. Additional apex, vendor or product partition specific (1, 2, 3), or custom ROM specific executables may exist under additional paths like /apex, /vendor, /product or under /sbin and /system/xbin directories.
