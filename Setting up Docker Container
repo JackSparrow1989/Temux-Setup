@@ -1,0 +1,20 @@
+Setup
+The termux-packages build environment can be setup through the following way. Once the build environment has been setup, the packages can be built, check Building-Packages docs for info on how to build packages.
+
+Docker Container (recommended)
+
+
+If docker has been installed and running, then launching a build environment should be as simple as running following, which will automatically create a docker container if it does not exist with the name termux-package-builder by default for the ghcr.io/termux/package-builder image (1, 2). See also Multiple Containers section.
+
+./scripts/run-docker.sh
+Wait until latest image is downloaded and then container's shell prompt should appear. The termux-packages repo root directory will be mounted at /home/builder/termux-packages.
+
+Commands can be executed inside the container without launching interactive shell by supplying them as arguments to ./scripts/run-docker.sh. Example:
+
+./scripts/run-docker.sh ./build-package.sh bash
+Sometimes Docker image should be updated if there have been significant changes made in the latest image provided by us required for building packages. If latest termux-packages git repo changes have been pulled, and docker image for which the current container was created for is outdated, then it may result in errors like NDK not pointing at a directory since expected newer NDK version path specified in properties.sh will not be found in old image container.
+
+Following command will download the latest docker image, delete outdated container and then create a new container for the latest image. Note that deleting a container will delete all built files inside the container and any packages previously built in old container will need to be built again in the new container. The deb/tar files in output directory are not deleted though.
+
+./scripts/update-docker.sh
+ 
