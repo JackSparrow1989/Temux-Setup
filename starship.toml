@@ -1,0 +1,43 @@
+  GNU nano 8.2                         starship.toml
+# ~/.config/starship.toml
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+format = """
+[╭─](white)\
+$username\
+[@](turquoise)\
+$hostname\
+[-](white)\
+$directory\
+$git_branch\
+$git_status\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
