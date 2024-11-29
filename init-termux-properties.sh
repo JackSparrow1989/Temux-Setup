@@ -1,0 +1,2 @@
+  GNU nano 8.2           init-termux-properties.sh                     if [ ! -f /data/data/com.termux/files/home/.config/termux/termux.prope>
+        mkdir -p /data/data/com.termux/files/home/.termux                      cp /data/data/com.termux/files/usr/share/examples/termux/termu>fi                                                                                                                                            
